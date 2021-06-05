@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: main-service-deployment
+  labels:
+    component: main-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: main-service
+  template:
+    metadata:
+      labels:
+        component: main-service
+    spec:
+      containers:
+        - name: main-service
+          image: xmhai/main-service:1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: service1.url
+              value: /name
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: main-service-service
+spec:
+  type: NodePort
+  selector:
+    component: main-service
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 300080
+      
