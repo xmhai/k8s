@@ -21,7 +21,15 @@ spec:
             - containerPort: 8080
           env:
             - name: service1.url
-              value: /name
+              valueFrom:
+                configMapKeyRef:
+                  name: k8s-config
+                  key: service1.url
+            - name: external.api.url
+              valueFrom:
+                configMapKeyRef:
+                  name: k8s-config
+                  key: external.api.url
 ---
 apiVersion: v1
 kind: Service

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: k8s-config
+  namespace: default
+data:
+  service1.url: http://service1/name
+  external.api.url: https://api.mocki.io/v1/b043df5a

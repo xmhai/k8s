@@ -24,3 +24,11 @@ hs_err_pid*
 
 .mvn/
 
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
