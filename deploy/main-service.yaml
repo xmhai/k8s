@@ -13,6 +13,8 @@ spec:
     metadata:
       labels:
         component: main-service
+      annotations:
+        configmap-version: 1
     spec:
       containers:
         - name: main-service
