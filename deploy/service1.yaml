@@ -25,10 +25,9 @@ kind: Service
 metadata:
   name: service1-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     component: service1
   ports:
     - port: 8081
       targetPort: 8081
-      nodePort: 30081

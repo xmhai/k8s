@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
         - name: main-service
-          image: xmhai/main-service:1
+          image: xmhai/main-service:2
           ports:
-            - containerPort: 8080
+            - containerPort: 8082
           env:
             - name: service1.url
               valueFrom:
@@ -34,13 +34,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: main-service-service
+  name: main-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     component: main-service
   ports:
-    - port: 8080
-      targetPort: 8080
-      nodePort: 300080
+    - port: 8082
+      targetPort: 8082
       
