@@ -40,6 +40,6 @@ spec:
   selector:
     component: main-service
   ports:
-    - port: 8082
+    - port: 80
       targetPort: 8082
       
