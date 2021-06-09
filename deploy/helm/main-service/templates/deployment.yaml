@@ -29,15 +29,3 @@ spec:
                 configMapKeyRef:
                   name: k8s-config
                   key: external.api.url
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: {{ .Chart.Name }}
-spec:
-  type: {{ .Values.service.type }}
-  selector:
-    app: {{ .Chart.Name }}
-  ports:
-    - port: {{ .Values.service.port }}
-      targetPort: {{ .Values.service.targetPort }}
