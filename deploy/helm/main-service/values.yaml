@@ -1,0 +1,10 @@
+replicaCount: 1
+image:
+  repository: "xmhai/main-service"
+  tag: "2"
+  pullPolicy: IfNotPresent
+  containerPort: 8082
+  
+service:
+  type: ClusterIP
+  port: 80
