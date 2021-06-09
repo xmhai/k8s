@@ -18,8 +18,6 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          ports:
-            - containerPort: {{ .Values.image.containerPort }}
           env:
             - name: service1.url
               valueFrom:
@@ -42,4 +40,4 @@ spec:
     app: {{ .Chart.Name }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: {{ .Values.image.containerPort }}
+      targetPort: {{ .Values.service.targetPort }}

@@ -3,8 +3,9 @@ image:
   repository: "xmhai/service1"
   tag: "1"
   pullPolicy: IfNotPresent
-  containerPort: 8081
   
 service:
   type: ClusterIP
   port: 80
+  targetPort: 8081
+  
