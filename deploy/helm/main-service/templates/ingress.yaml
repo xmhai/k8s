@@ -10,6 +10,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: main-service
+            name: {{ .Chart.Name }}
             port:
-              number: 8082
+              number: {{ .Values.service.port }}
